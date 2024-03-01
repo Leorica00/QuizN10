@@ -1,6 +1,5 @@
 package com.example.quizn10.presentation.screen.transaction
 
-import android.util.Log.d
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.quizn10.data.common.Resource
@@ -38,7 +37,6 @@ class TransactionViewModel @Inject constructor(
     fun getCourse() {
         viewModelScope.launch {
             getCourceUseCase().collect {resource ->
-                d("resource234", resource.toString())
                 when(resource) {
                     is Resource.Loading -> _accountsStateFlow.update { currentState -> currentState.copy(isLoading = resource.loading) }
                     is Resource.Error -> updateErrorMessage(getErrorMessage(resource.error))

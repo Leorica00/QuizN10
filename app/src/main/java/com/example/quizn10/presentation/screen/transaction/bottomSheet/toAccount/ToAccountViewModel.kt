@@ -1,6 +1,5 @@
 package com.example.quizn10.presentation.screen.transaction.bottomSheet.toAccount
 
-import android.util.Log.d
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.quizn10.R
@@ -30,7 +29,6 @@ class ToAccountViewModel @Inject constructor(private val getAccountUseCase: GetA
             accountNumber.length == 9 && accountNumber.all { it.digitToIntOrNull() != null } -> _accountStateFlow.update { currentState ->  currentState.copy(phoneNumber = accountNumber) }
             accountNumber.length == 11 && accountNumber.all { it.digitToIntOrNull() != null } -> _accountStateFlow.update { currentState ->  currentState.copy(personId = accountNumber) }
             accountNumber.length == 22 -> {
-                d("accountNumber", "${accountNumber}, ${_accountStateFlow.value.neededAccount?.accountNumber}")
                 if (accountNumber == _accountStateFlow.value.neededAccount?.accountNumber){
                     _accountStateFlow.update { currentState -> currentState.copy(accountNumber = accountNumber, isValidated = true) }
                 } else
@@ -40,7 +38,7 @@ class ToAccountViewModel @Inject constructor(private val getAccountUseCase: GetA
         }
     }
 
-    fun getAccount() {
+    private fun getAccount() {
         viewModelScope.launch {
             getAccountUseCase().collect {
                 when(it) {
