@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">QuizN10</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="from_account">From Account</string>
+    <string name="no_internet">No Internet Connection</string>
+    <string name="error_client">Client Error</string>
+    <string name="error_server">Server Error</string>
+    <string name="error_http">Http Error</string>
+    <string name="error_timeout">Timeout Error</string>
+    <string name="unexpected_error">Unexpected Error</string>
+    <string name="dots">&#11044;&#11044;&#11044;&#11044; &#160;</string>
+    <string name="not_valid">account is not valid</string>
+    <string name="enter_phone_id_or_accountnumber">enter phone, id or accountNumber</string>
+    <string name="submit">submit</string>
+    <string name="to_account">To Account</string>
+    <string name="gel">₾</string>
+    <string name="eur">€</string>
+    <string name="usd">$</string>
+</resources>
